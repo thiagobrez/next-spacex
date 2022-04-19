@@ -3,8 +3,10 @@ import { GraphQLClient } from 'graphql-request'
 class GraphQLService {
   public client: GraphQLClient
 
+  public SERVER_URL = (process.env.SERVER_URL as string) ?? 'https://api.spacex.land/graphql/'
+
   constructor() {
-    this.client = new GraphQLClient(process.env.SERVER_URL as string, { headers: {} })
+    this.client = new GraphQLClient(this.SERVER_URL, { headers: {} })
   }
 }
 
