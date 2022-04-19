@@ -7,7 +7,9 @@ type CardListProps = {
 const CardList = ({ children }: CardListProps) => {
   return (
     <>
-      <div className="container">{children}</div>
+      <div className="container" data-testid="card-list">
+        {children}
+      </div>
 
       <style jsx>{`
         .container {

@@ -47,7 +47,7 @@ const LaunchDetailPage: NextPage<Props> = ({ launch }: Props) => (
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   if (context.params) {
-    const id = context.params.id
+    const { id } = context.params
 
     const { launch } = await GraphQLService.client.request<{ launch: Launch }>(LAUNCH_BY_ID, {
       id,

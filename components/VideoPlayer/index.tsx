@@ -41,9 +41,14 @@ const VideoPlayer = ({ launch }: VideoPlayerProps) => {
     <>
       <div className="container" role="button" onClick={onClickLaunch}>
         {playingVideo ? (
-          <iframe src={sanitizeURL(launch.links.video_link)} width="700" height="400" />
+          <iframe
+            src={sanitizeURL(launch.links.video_link)}
+            width="700"
+            height="400"
+            data-testid="video-iframe"
+          />
         ) : (
-          <div className="videoWrapper">
+          <div className="videoWrapper" data-testid="video-disabled-wrapper">
             <div className="overlay" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
